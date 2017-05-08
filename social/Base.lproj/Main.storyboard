@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,11 +21,139 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fez-bh-ybV" customClass="FancyView" customModule="social" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-dark" translatesAutoresizingMaskIntoConstraints="NO" id="Gje-yS-77r">
+                                        <rect key="frame" x="43" y="22.5" width="288" height="105"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98431372549019602" green="0.62745098039215685" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Gje-yS-77r" firstAttribute="centerY" secondItem="fez-bh-ybV" secondAttribute="centerY" id="Nx3-Kc-OdP"/>
+                                    <constraint firstItem="Gje-yS-77r" firstAttribute="centerX" secondItem="fez-bh-ybV" secondAttribute="centerX" id="Swm-yp-pAB"/>
+                                    <constraint firstAttribute="height" constant="150" id="jjD-Ur-4bb"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKD-vS-RSZ">
+                                <rect key="frame" x="0.0" y="592" width="375" height="75"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계정이 없나요? 회원가입 바로가기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWQ-sU-cg1">
+                                        <rect key="frame" x="8" y="8" width="359" height="59"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.41960784313725491" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="NWQ-sU-cg1" secondAttribute="bottom" constant="8" id="5rd-jy-Oa0"/>
+                                    <constraint firstAttribute="height" constant="75" id="9ld-2a-1PR"/>
+                                    <constraint firstAttribute="trailing" secondItem="NWQ-sU-cg1" secondAttribute="trailing" constant="8" id="F9H-ue-GE0"/>
+                                    <constraint firstItem="NWQ-sU-cg1" firstAttribute="leading" secondItem="fKD-vS-RSZ" secondAttribute="leading" constant="8" id="KwU-0Z-gS1"/>
+                                    <constraint firstItem="NWQ-sU-cg1" firstAttribute="top" secondItem="fKD-vS-RSZ" secondAttribute="top" constant="8" id="VbT-gr-M31"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인 해주세요 :-)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBJ-Af-Gb6">
+                                <rect key="frame" x="16" y="170" width="343" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="dbB-HV-Mk1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrI-BP-aQE" customClass="RoundButton" customModule="social" customModuleProvider="target">
+                                <rect key="frame" x="112" y="210" width="150" height="150"/>
+                                <color key="backgroundColor" red="0.35900092124938965" green="0.43934404850006104" blue="0.69518274068832397" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="5Op-Mv-Uh1"/>
+                                    <constraint firstAttribute="height" constant="150" id="vnS-BY-U43"/>
+                                </constraints>
+                                <state key="normal" image="f"/>
+                                <connections>
+                                    <action selector="facebookBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q4u-5P-iyL"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="YqT-8i-6Ga">
+                                <rect key="frame" x="46" y="390" width="283" height="118"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="03s-3z-7r0" customClass="FancyField" customModule="social" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="283" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xJq-8j-jb4" customClass="FancyField" customModule="social" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44" width="283" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXn-OW-kyV" customClass="FancyButton" customModule="social" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="88" width="283" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Sign In">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zvb-XV-vnP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fez-bh-ybV" secondAttribute="trailing" id="0QQ-Q2-7h0"/>
+                            <constraint firstItem="fKD-vS-RSZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4VT-iN-q7L"/>
+                            <constraint firstItem="dBJ-Af-Gb6" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="84q-Ue-VCl"/>
+                            <constraint firstItem="fez-bh-ybV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9mn-xK-naq"/>
+                            <constraint firstItem="dBJ-Af-Gb6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="GXo-Zv-opx"/>
+                            <constraint firstItem="YqT-8i-6Ga" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M5j-Ja-ryF"/>
+                            <constraint firstItem="fez-bh-ybV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="N4H-XY-ffS"/>
+                            <constraint firstAttribute="trailing" secondItem="fKD-vS-RSZ" secondAttribute="trailing" id="Qo0-RJ-qWC"/>
+                            <constraint firstItem="nrI-BP-aQE" firstAttribute="top" secondItem="dBJ-Af-Gb6" secondAttribute="bottom" constant="20" id="Tmm-uK-4An"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YqT-8i-6Ga" secondAttribute="trailing" constant="30" id="cri-Sq-OH6"/>
+                            <constraint firstItem="nrI-BP-aQE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e8a-Py-Ohe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fKD-vS-RSZ" secondAttribute="bottom" id="rBU-K4-IgI"/>
+                            <constraint firstItem="dBJ-Af-Gb6" firstAttribute="top" secondItem="fez-bh-ybV" secondAttribute="bottom" constant="20" id="xJx-V1-Y1T"/>
+                            <constraint firstItem="YqT-8i-6Ga" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="yQc-Q1-ayZ"/>
+                            <constraint firstItem="YqT-8i-6Ga" firstAttribute="top" secondItem="nrI-BP-aQE" secondAttribute="bottom" constant="30" id="yhi-cv-P60"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="03s-3z-7r0" id="1qf-Fk-nih"/>
+                        <outlet property="pwField" destination="xJq-8j-jb4" id="3BI-JM-LGo"/>
+                        <segue destination="Xee-NF-0Hr" kind="show" identifier="goToFeed" id="PA6-tY-MfH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="35.532233883058474"/>
+        </scene>
+        <!--FeedVC-->
+        <scene sceneID="wvR-it-YCo">
+            <objects>
+                <viewController id="Xee-NF-0Hr" customClass="FeedVC" customModule="social" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="149-an-AEh"/>
+                        <viewControllerLayoutGuide type="bottom" id="NQy-WA-M1i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bsw-H6-lQk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.94508582353591919" green="0.50454217195510864" blue="0.41137069463729858" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OpF-Ky-fXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="999" y="36"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="f" width="352" height="328"/>
+        <image name="logo-dark" width="288" height="105"/>
+    </resources>
 </document>
